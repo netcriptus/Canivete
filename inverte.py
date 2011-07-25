@@ -16,6 +16,7 @@ def main(argv):
     sys.stderr.write("E necessário passar pelo menos um número\n")
     return 1
   
+  sys.stdout.write("\n")
   for num in argv[1:]:
     sys.stdout.write("%s " % num[::-1])
   sys.stdout.write("\n")
