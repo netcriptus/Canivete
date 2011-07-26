@@ -51,3 +51,22 @@ def define_input():
     arq_path = None
     
   return arq_input, arq_path
+
+
+def define_output():
+  output_choice = 0
+  while output_choice < 1 or output_choice > 2:
+    sys.stdout.write("\n\nA saída deve ser escrita na tela?\n")
+    sys.stdout.write("1. Sim, escreva o resultado na tela\n")
+    sys.stdout.write("2. Não, quero um arquivo guardando o resultado\n> ")
+    try:
+      output_choice = int(sys.stdin.readline().strip())
+    except ValueError:
+      pass
+      
+    if output_choice == 1:
+      output = sys.stdout
+    else:
+      sys.stdout.write("\n\nDigite o nome do arquivo de saída\n> ")
+      output = open(sys.stdin.readline().strip(), "w")
+  return output_choice, output
