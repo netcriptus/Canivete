@@ -69,7 +69,8 @@ def inverte():
     
   
   for string in strings:
-    output.write("%s\n" % string.strip()[::-1])
+    for s in string.strip().split(" "):
+      output.write("%s\n" % s[::-1])
   if output_choice == 2:
     output.close()
     
