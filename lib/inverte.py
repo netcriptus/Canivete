@@ -24,9 +24,9 @@ def inverte():
   strings = get_input(arq_input, arq_path)
   
   for string in strings:
-    if " " in string:
+    if " " in string.strip():
       for s in string.strip().split(" "):
-        output.write("%s " % s[::-1])
+        output.write("%s" % s[::-1])
       output.write("\n")
     else:
       output.write("%s\n" % string[::-1])
