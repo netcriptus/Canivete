@@ -29,7 +29,7 @@ def inverte():
         output.write("%s " % s[::-1])
       output.write("\n")
     else:
-      output.write("%s\n" % s[::-1])
+      output.write("%s\n" % string[::-1])
       
   if output_choice == 2:
     output.close()

@@ -17,7 +17,7 @@ def get_input(arq_input, arq_path):
       fp = open(arq_path, "r")
     except IOError:
       sys.stderr.write("\nParece que o arquivo que você passou como entrada não existe. Digitou errado?\n")
-      return 1
+      sys.exit(1)
     strings = fp.readlines()
     fp.close()
     
