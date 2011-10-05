@@ -4,12 +4,11 @@
 utils.py
 
 Created by Fernando Cezar on 2011-07-26.
-Copyright (c) 2011 VidaNerd.com. All rights reserved.
+Copyright (c) 2011 8Bits Web. All rights reserved.
 """
 
 import sys
 import os
-
 
 def get_input(arq_input, arq_path):
   if arq_input:
@@ -32,10 +31,17 @@ def get_input(arq_input, arq_path):
   return strings
 
 
+def nsplit(string, group_size):
+  """
+    Função separa uma strings em grupos de tamanho <group_size>
+  """
+  return [string[k:k+group_size] for k in range(0, len(string), group_size)]
+
+
 def define_input():
   arq_input = 0
   while arq_input < 1 or arq_input > 2:
-    sys.stdout.write("\n\nA string para inverter está num arquivo, ou será digitada?\n")
+    sys.stdout.write("\n\nA string está num arquivo, ou será digitada?\n")
     sys.stdout.write("1. Eu mesmo vou digitar\n")
     sys.stdout.write("2. Estou com preguiça, leia do arquivo\n> ")
     try:

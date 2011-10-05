@@ -4,7 +4,7 @@
 separa.py
 
 Created by Fernando Cezar on 2011-07-25.
-Copyright (c) 2011 __VidaNerd.com__. All rights reserved.
+Copyright (c) 2011 8Bits Web. All rights reserved.
 """
 
 import sys
