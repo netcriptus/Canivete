@@ -46,8 +46,12 @@ def decript_pardal(**kwargs):
   for string in strings:
     paired_string = nsplit(string, 2)
     for char, key in zip(paired_string, KEY[0:len(paired_string)-1]):
-      output.write("%c" % chr(int(char, 16) ^ ord(key)))
-    output.write("\n"*3)
+      try:
+        decrypted_char = chr(int(char, 16) ^ ord(key))
+      except ValueError:
+        decrypted_char = char # Se der erro, não é texto criptografado
+      output.write("%s" % decrypted_char)
+    output.write("\n"*2)
     
   if output_choice == 2:
     output.close()
