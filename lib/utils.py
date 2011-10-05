@@ -5,12 +5,18 @@ utils.py
 
 Created by Fernando Cezar on 2011-07-26.
 Copyright (c) 2011 8Bits Web. All rights reserved.
+
+Este arquivo contem funçõe genéricas, que são usados por vários scripts
 """
 
 import sys
 import os
 
 def get_input(arq_input, arq_path):
+  """
+    Define se o input será feita via entrada padrão ou arquivo.
+    Caso a entrada seja do arquivo, tenta abri-lo.
+  """
   if arq_input:
     try:
       fp = open(arq_path, "r")
@@ -60,6 +66,10 @@ def define_input():
 
 
 def define_output():
+  """
+    Define se a saída do programa será em um arquivo ou na saída padrão.
+    Caso seja escolhido um arquivo, devolve um ponteiro para o mesmo.
+  """
   output_choice = 0
   while output_choice < 1 or output_choice > 2:
     sys.stdout.write("\n\nA saída deve ser escrita na tela?\n")

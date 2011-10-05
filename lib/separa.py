@@ -22,17 +22,17 @@ def options():
 
 
 def separa(**kwargs):
+  """
+    Dada uma string, esse programa o separa em grupos de tamanho <group_size>
+  """
   arq_input, arq_path, output_choice, output, groups_size = options()
   
   strings = get_input(arq_input, arq_path)
   
   for string in strings:
-    start = 0
-    ending = groups_size
-    while start < len(string.strip()):
-      output.write("%s, " % string.strip()[start:ending])
-      start += groups_size
-      ending += groups_size
+    splited_string = nsplit(string, group_size)
+    for group in splited_string:
+      output.write("%s, " % group)
     output.write("\n")
   if output_choice == 2:
     output.close()

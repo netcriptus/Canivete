@@ -4,7 +4,7 @@
 inverte.py
 
 Created by Fernando Cezar on 2011-07-25.
-Copyright (c) 2011 __VidaNerd.com__. All rights reserved.
+Copyright (c) 2011 8Bits Web. All rights reserved.
 """
 
 import sys
@@ -20,6 +20,9 @@ def options():
 
 
 def inverte():
+  """
+    Essa função inverte uma string palavra por palavra
+  """
   arq_input, arq_path, output_choice, output = options()
   
   strings = get_input(arq_input, arq_path)

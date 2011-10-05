@@ -30,6 +30,11 @@ def main(argv):
 
 
 if __name__ == '__main__':
+  """
+    As funções devem ser incluídas aqui e na lista de funções
+    (lib/functions.py), cada arquivo é uma função nova.
+  """
+  
   from functions import functions
   from inverte import *
   from separa import *
