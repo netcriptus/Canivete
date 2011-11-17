@@ -12,7 +12,6 @@ Aqui devem ser listadas todas as funções do programa, com sua chamada.
 
 functions = [{"desc": "Inverter uma string",
               "func_call": "inverte()"},
-              
              {"desc": "Separa uma string em grupos",
               "func_call": "separa()"},
              {"desc": "Decriptografia Pardal",
