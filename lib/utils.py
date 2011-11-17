@@ -78,11 +78,11 @@ def define_output():
     try:
       output_choice = int(sys.stdin.readline().strip())
     except ValueError:
-      pass
+      output_choice = 0
       
     if output_choice == 1:
       output = sys.stdout
-    else:
+    elif output_choice == 2:
       sys.stdout.write("\n\nDigite o nome do arquivo de saída\n> ")
       output = open(sys.stdin.readline().strip(), "w")
   return output_choice, output
