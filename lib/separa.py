@@ -30,7 +30,7 @@ def separa(**kwargs):
   strings = get_input(arq_input, arq_path)
   
   for string in strings:
-    splited_string = nsplit(string, group_size)
+    splited_string = nsplit(string, groups_size)
     for group in splited_string:
       output.write("%s, " % group)
     output.write("\n")

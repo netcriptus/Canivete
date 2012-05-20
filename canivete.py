@@ -8,8 +8,7 @@ Copyright (c) 2011 8Bits Web. All rights reserved.
 """
 
 import sys
-import os
-sys.path.append(os.path.join(os.path.dirname(__file__), "lib"))
+from lib import *
 
 def main(argv):
   opt = None
@@ -34,11 +33,15 @@ if __name__ == '__main__':
     As funções devem ser incluídas aqui e na lista de funções
     (lib/functions.py), cada arquivo é uma função nova.
   """
+<<<<<<< HEAD
   
   from functions import functions
   from inverte import *
   from separa import *
   from decript_pardal import *
   from pula_um import *
+=======
+  from lib.functions import functions
+>>>>>>> ecc31bc16b97d7398426d7911b69d8259d005908
   sys.exit(main(sys.argv))
 
