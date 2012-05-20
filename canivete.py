@@ -33,13 +33,6 @@ if __name__ == '__main__':
     As funções devem ser incluídas aqui e na lista de funções
     (lib/functions.py), cada arquivo é uma função nova.
   """
-  from functions import functions
-  from inverte import *
-  from separa import *
-  from decript_pardal import *
-  from pula_um import *
-
   from lib.functions import functions
-
   sys.exit(main(sys.argv))
 
