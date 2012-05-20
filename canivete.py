@@ -39,5 +39,6 @@ if __name__ == '__main__':
   from inverte import *
   from separa import *
   from decript_pardal import *
+  from pula_um import *
   sys.exit(main(sys.argv))
 

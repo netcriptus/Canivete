@@ -16,5 +16,7 @@ functions = [{"desc": "Inverter uma string",
              {"desc": "Separa uma string em grupos",
               "func_call": "separa()"},
              {"desc": "Decriptografia Pardal",
-              "func_call": "decript_pardal()"}
+              "func_call": "decript_pardal()"},
+              {"desc": "Decriptografia pula-um",
+               "func_call": "pula_um()"}
               ]
