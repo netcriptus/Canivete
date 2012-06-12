@@ -7,34 +7,25 @@ Created by Fernando Cezar on 2011-04-14.
 Copyright (c) 2011 __VidaNerd.com__. All rights reserved.
 """
 
-import sys
-from utils import *
+from lib.IOHandler import *
+from string import lowercase as letters
 
-def options():
-  arq_input, arq_path = define_input()
-  output_choice, output = define_output()
+def decript_sistemanet(arq_input, arq_path):
+  # Montando dicionário com as letras e sua posição correspondente no alfabeto
+  dictionary = {}
+  for letter, i in zip(letters, range(1, len(letters)+1)):
+    dictionary.update({letter: i%16})
+  dictionary["z"] = 0
   
-  return (arq_input, arq_path, output_choice, output)
-
-
-# Montando dicionário com as letras e sua posição correspondente no alfabeto
-dictionary = {}
-for i in range(97, 124):
-  dictionary.update({chr(i): (i-96)%16})
-
-dictionary["z"] = 0
-
-def decript_sistemanet(**kwargs):
-  arq_input, arq_path, output_choice, output = options()    
-  
-  lines = get_input(arq_input, arq_path)
+  lines = read_input(arq_input, arq_path)
   
   while not lines[0].startswith("["):
     lines.pop(0)
     
   if not lines[-1].startswith("["):
     lines.pop(-1)
-    
+  
+  output = ""
   for line in lines:
     line_parts = line.strip()
     line_parts = line_parts.split("=")
@@ -52,10 +43,7 @@ def decript_sistemanet(**kwargs):
     for block in ascii_text:
       clear_text += chr(block)
       
-    output.write("%s=%s=%s\n" % (line_parts[0], clear_text, line_parts[2]))
-  output.write("\n")
-  
-  if output_choice == 2:
-    output.close()
+    output += ("%s=%s=%s\n" % (line_parts[0], clear_text, line_parts[2]))
+  output += "\n"
       
-  return 0
+  return output

@@ -7,9 +7,8 @@ Created by Fernando Cezar on 2011-07-25.
 Copyright (c) 2011 __VidaNerd.com__. All rights reserved.
 """
 
-import sys
-import os
-from utils import *
+from lib.IOHandler import *
+from utils import nsplit
 
 # Se parar de funcionar, pode ser que tenha mudado a chave.
 KEY = "5655545655381688355541151683736525351505152535455336435363716816838424040414195431239696123125941259"
@@ -21,7 +20,7 @@ def options():
   return (arq_input, arq_path, output_choice, output)
 
 
-def decript_pardal(**kwargs):
+def decript_pardal(arq_input, arq_path):
   """
     Essa criptografia é explicada em <http://www.mentebinaria.com.br/artigos/0x18/0x18-img2005m.html>
     
@@ -39,10 +38,9 @@ def decript_pardal(**kwargs):
 
     4. Converte o resultado para o equivalente em ASCII.
   """
-  arq_input, arq_path, output_choice, output = options()
   
-  strings = get_input(arq_input, arq_path)
-  
+  strings = read_input(arq_input, arq_path)
+  decryption = ""
   for string in strings:
     paired_string = nsplit(string, 2)
     for char, key in zip(paired_string, KEY[0:len(paired_string)-1]):
@@ -50,10 +48,7 @@ def decript_pardal(**kwargs):
         decrypted_char = chr(int(char, 16) ^ ord(key))
       except ValueError:
         decrypted_char = char # Se der erro, não é texto criptografado
-      output.write("%s" % decrypted_char)
-    output.write("\n"*2)
-    
-  if output_choice == 2:
-    output.close()
-    
-  return 0
+      decryption += decrypted_char
+    decryption += "\n\n"
+  
+  return decryption
