@@ -53,15 +53,11 @@ quiser, para que atenda melhor suas necessidades.
 
 Antes de tudo, procure seguir a PEP8 para programar para o Canivete.
 
-Dentro da pasta lib estão as funções que são disponibilizadas no Canivete. Para
+Dentro da pasta _functions_ estão as funções que são disponibilizadas no Canivete. Para
 escrever um novo módulo, crie um arquivo para a sua função (sugiro seguir os
-exemplos existentes dos outros arquivos), depois vá no arquivo functions.py e
-inclua uma descrição e a chamada para a sua função principal. Depois importe
-sua biblioteca no arquivo canivete.py.
+exemplos existentes dos outros arquivos), e inclua o nome da sua função no __init__.py,
+junto com uma descrição. Essa descrição é o que vai aparecer no menu.
 
-Esse método obviamente tem problemas de escalabilidade. Conhece um jeito melhor
-de fazer? Pode me enviar um e-mail, ou fazer um push request com a solução.
-Juro que não fico ofendido, fico até feliz.
 
 ### Posso distribuir o software alterado por mim? ###
 
