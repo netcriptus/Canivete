@@ -14,7 +14,7 @@ def decript_sistemanet(arq_input, arq_path):
   # Montando dicionário com as letras e sua posição correspondente no alfabeto
   dictionary = {}
   for letter, i in zip(letters, range(1, len(letters)+1)):
-    dictionary.update({letter: i%16})
+    dictionary.update({letter: i%15})
   dictionary["z"] = 0
   
   lines = read_input(arq_input, arq_path)
